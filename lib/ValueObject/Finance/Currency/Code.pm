@@ -172,8 +172,8 @@ my $currency_codes = {
 sub validate {
     my $self    = shift;
     my $value   = shift || '';
-	croak (ValueObject::Finance::Currency::Exception::InvalidCode->new($value))
-		unless ($currency_codes->{ lc($value) });
+    croak (ValueObject::Finance::Currency::Exception::InvalidCode->new($value))
+        unless ($currency_codes->{ lc($value) });
     return 1;
 }
 

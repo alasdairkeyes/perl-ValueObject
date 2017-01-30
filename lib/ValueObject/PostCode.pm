@@ -11,7 +11,7 @@ use ValueObject::PostCode::Exception::Invalid;
 sub validate {
     my $self    = shift;
     my $value   = shift || '';
-	croak (ValueObject::PostCode::Exception::Invalid->new($value))
+    croak (ValueObject::PostCode::Exception::Invalid->new($value))
         unless ($value =~ /^([A-Z][0-9]|[A-Z][0-9]{2}|[A-Z]{2}[0-9]|[A-Z]{2}[0-9]{2}|[A-Z][0-9][A-Z]|[A-Z][A-Z][0-9][A-Z])\s?\d[ABDEFGHJLNPQRSTUWXYZ]{2}$/);
     return 1;
 }

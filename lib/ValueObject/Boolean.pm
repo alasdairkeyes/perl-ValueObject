@@ -13,18 +13,18 @@ sub new {
     my $class   = shift;
     my $value   = shift;
 
-	my $boolean_object;
+    my $boolean_object;
 
-	foreach my $boolean_type ('ValueObject::Boolean::YesNo','ValueObject::Boolean::TrueFalse','ValueObject::Boolean::OnOff') {
-		$boolean_object = eval {
-			$boolean_type->new($value);
-		};
-		if ($boolean_object) {
-			return $boolean_object;
-		}
-	}
+    foreach my $boolean_type ('ValueObject::Boolean::YesNo','ValueObject::Boolean::TrueFalse','ValueObject::Boolean::OnOff') {
+        $boolean_object = eval {
+            $boolean_type->new($value);
+        };
+        if ($boolean_object) {
+            return $boolean_object;
+        }
+    }
 
-	croak (ValueObject::Boolean::Exception::Invalid->new($value));
+    croak (ValueObject::Boolean::Exception::Invalid->new($value));
 }
 
 1;

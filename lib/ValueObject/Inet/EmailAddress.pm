@@ -11,7 +11,7 @@ sub validate {
     my $self    = shift;
     my $value   = shift || '';
     my $email_address = Email::Valid->address($value);
-	croak (ValueObject::Inet::EmailAddress::Exception::Invalid->new($value))
+    croak (ValueObject::Inet::EmailAddress::Exception::Invalid->new($value))
         unless ($email_address);
     return 1;
 }

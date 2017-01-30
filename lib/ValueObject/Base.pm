@@ -46,9 +46,9 @@ ValueObject::Base - Base object for all value objects
     my $value   = shift || '';
     
     # if $value validates
-    # 	return 1
+    #     return 1
     # else
-    # 	Throw exception on failer
+    #     Throw exception on failer
   }
 
 =head1 DESCRIPTION

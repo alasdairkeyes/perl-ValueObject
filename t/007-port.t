@@ -11,15 +11,15 @@ use lib "$Bin/../lib";
 # Setup
 
 my @invalids = qw/
-	-1
-	0
-	65536
+    -1
+    0
+    65536
 /;
 
 my @valids = qw/
-	1
-	2
-	65535
+    1
+    2
+    65535
 /;
 
 require_ok('ValueObject::Inet::Port');
@@ -45,8 +45,8 @@ ok($test_valid_port eq $valid_port_number, "stringify for object '$valid_port_nu
 # Test Exceptions
 
 throws_ok { ValueObject::Inet::Port->new('sdfa') }
-	'ValueObject::Inet::Port::Exception::Invalid',
-	'Invalid string exception';
+    'ValueObject::Inet::Port::Exception::Invalid',
+    'Invalid string exception';
 
 my $test_count = 5;
 
@@ -55,15 +55,15 @@ my $test_count = 5;
 # Test validation
 
 foreach my $valid (@valids) {
-	ok(ValueObject::Inet::Port->new($valid), "valid port $valid");
-	++$test_count;
+    ok(ValueObject::Inet::Port->new($valid), "valid port $valid");
+    ++$test_count;
 }
 
 foreach my $invalid (@invalids) {
-	throws_ok { ValueObject::Inet::Port->new($invalid) }
-		'ValueObject::Inet::Port::Exception::Invalid',
-		"Invalid port $invalid";
-	++$test_count;
+    throws_ok { ValueObject::Inet::Port->new($invalid) }
+        'ValueObject::Inet::Port::Exception::Invalid',
+        "Invalid port $invalid";
+    ++$test_count;
 }
 
 done_testing($test_count);

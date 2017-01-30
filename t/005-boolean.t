@@ -106,52 +106,52 @@ ok($off->boolean() == 0, "boolean() function for object 'off'");
 # Test Exceptions
 
 throws_ok { ValueObject::Boolean::TrueFalse->new('sdfa') }
-	'ValueObject::Boolean::Exception::InvalidTrueFalse',
-	'Invalid string exception for TrueFalse';
+    'ValueObject::Boolean::Exception::InvalidTrueFalse',
+    'Invalid string exception for TrueFalse';
 
 throws_ok { ValueObject::Boolean::TrueFalse->new('') }
-	'ValueObject::Boolean::Exception::InvalidTrueFalse',
-	'Empty string exception for TrueFalse';
+    'ValueObject::Boolean::Exception::InvalidTrueFalse',
+    'Empty string exception for TrueFalse';
 
 throws_ok { ValueObject::Boolean::TrueFalse->new(1111) }
-	'ValueObject::Boolean::Exception::InvalidTrueFalse',
-	'Invalid number exception for TrueFalse';
+    'ValueObject::Boolean::Exception::InvalidTrueFalse',
+    'Invalid number exception for TrueFalse';
 
 
 throws_ok { ValueObject::Boolean::YesNo->new('sdfa') }
-	'ValueObject::Boolean::Exception::InvalidYesNo',
-	'Invalid string exception for YesNo';
+    'ValueObject::Boolean::Exception::InvalidYesNo',
+    'Invalid string exception for YesNo';
 
 throws_ok { ValueObject::Boolean::YesNo->new('') }
-	'ValueObject::Boolean::Exception::InvalidYesNo',
-	'Empty string exception for YesNo';
+    'ValueObject::Boolean::Exception::InvalidYesNo',
+    'Empty string exception for YesNo';
 
 throws_ok { ValueObject::Boolean::YesNo->new(1111) }
-	'ValueObject::Boolean::Exception::InvalidYesNo',
-	'Invalid number exception for YesNo';
+    'ValueObject::Boolean::Exception::InvalidYesNo',
+    'Invalid number exception for YesNo';
 
 
 throws_ok { ValueObject::Boolean::OnOff->new('sdfa') }
-	'ValueObject::Boolean::Exception::InvalidOnOff',
-	'Invalid string exception for OnOff';
+    'ValueObject::Boolean::Exception::InvalidOnOff',
+    'Invalid string exception for OnOff';
 
 throws_ok { ValueObject::Boolean::OnOff->new('') }
-	'ValueObject::Boolean::Exception::InvalidOnOff',
-	'Empty string exception for OnOff';
+    'ValueObject::Boolean::Exception::InvalidOnOff',
+    'Empty string exception for OnOff';
 
 throws_ok { ValueObject::Boolean::OnOff->new(1111) }
-	'ValueObject::Boolean::Exception::InvalidOnOff',
-	'Invalid number exception for OnOff';
+    'ValueObject::Boolean::Exception::InvalidOnOff',
+    'Invalid number exception for OnOff';
 
 
 throws_ok { ValueObject::Boolean->new('sdfa') }
-	'ValueObject::Boolean::Exception::Invalid',
-	'Invalid string exception for Boolean';
+    'ValueObject::Boolean::Exception::Invalid',
+    'Invalid string exception for Boolean';
 
 throws_ok { ValueObject::Boolean->new('') }
-	'ValueObject::Boolean::Exception::Invalid',
-	'Empty string exception for Boolean';
+    'ValueObject::Boolean::Exception::Invalid',
+    'Empty string exception for Boolean';
 
 throws_ok { ValueObject::Boolean->new(1111) }
-	'ValueObject::Boolean::Exception::Invalid',
-	'Invalid number exception for Boolean';
+    'ValueObject::Boolean::Exception::Invalid',
+    'Invalid number exception for Boolean';

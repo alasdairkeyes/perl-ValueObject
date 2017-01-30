@@ -16,7 +16,7 @@ my @enum = (
 sub validate {
     my $self    = shift;
     my $value   = shift || '';
-	croak (ValueObject::Gender::Exception::Invalid->new($value))
+    croak (ValueObject::Gender::Exception::Invalid->new($value))
         unless (grep { lc($_) eq lc($value) } @enum);
     return 1;
 }

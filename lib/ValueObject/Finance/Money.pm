@@ -12,18 +12,18 @@ sub new {
     my $class   = shift;
     my $value   = shift;
 
-	my $currency_object;
+    my $currency_object;
 
-	foreach my $currency_type ('ValueObject::Finance::Money::Period', 'ValueObject::Finance::Money::Comma') {
-		$currency_object = eval {
-			$currency_type->new($value);
-		};
-		if ($currency_object) {
-			return $currency_object;
-		}
-	}
+    foreach my $currency_type ('ValueObject::Finance::Money::Period', 'ValueObject::Finance::Money::Comma') {
+        $currency_object = eval {
+            $currency_type->new($value);
+        };
+        if ($currency_object) {
+            return $currency_object;
+        }
+    }
 
-	croak (ValueObject::Finance::Money::Exception::Invalid->new($value));
+    croak (ValueObject::Finance::Money::Exception::Invalid->new($value));
 }
 
 1;

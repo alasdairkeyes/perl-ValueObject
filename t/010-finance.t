@@ -63,18 +63,18 @@ ok($currency_code eq $valid_currency_code, "value function for object '$valid_cu
 ## Test Exceptions
 
 throws_ok { ValueObject::Finance::Money::Period->new('sdfa') }
-	'ValueObject::Finance::Money::Exception::InvalidPeriod',
-	'Invalid string exception for Period Finance::Money';
+    'ValueObject::Finance::Money::Exception::InvalidPeriod',
+    'Invalid string exception for Period Finance::Money';
 
 throws_ok { ValueObject::Finance::Money::Comma->new('sdfa') }
-	'ValueObject::Finance::Money::Exception::InvalidComma',
-	'Invalid string exception for Comma Finance::Money';
+    'ValueObject::Finance::Money::Exception::InvalidComma',
+    'Invalid string exception for Comma Finance::Money';
 
 throws_ok { ValueObject::Finance::Money->new('sdfa') }
-	'ValueObject::Finance::Money::Exception::Invalid',
-	'Invalid string exception for Finance::Money';
+    'ValueObject::Finance::Money::Exception::Invalid',
+    'Invalid string exception for Finance::Money';
 
 throws_ok { ValueObject::Finance::Currency::Code->new('sdfa') }
-	'ValueObject::Finance::Currency::Exception::InvalidCode',
-	'Invalid string exception for Finance::Currency::Code';
+    'ValueObject::Finance::Currency::Exception::InvalidCode',
+    'Invalid string exception for Finance::Currency::Code';
 

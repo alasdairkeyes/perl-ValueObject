@@ -47,13 +47,13 @@ ok($female_short eq 'f', "stringigy for object 'f'");
 # Test Exceptions
 
 throws_ok { ValueObject::Gender->new('sdfa') }
-	'ValueObject::Gender::Exception::Invalid',
-	'Invalid string exception';
+    'ValueObject::Gender::Exception::Invalid',
+    'Invalid string exception';
 
 throws_ok { ValueObject::Gender->new('') }
-	'ValueObject::Gender::Exception::Invalid',
-	'Empty string exception';
+    'ValueObject::Gender::Exception::Invalid',
+    'Empty string exception';
 
 throws_ok { ValueObject::Gender->new(1111) }
-	'ValueObject::Gender::Exception::Invalid',
-	'Invalid number exception';
+    'ValueObject::Gender::Exception::Invalid',
+    'Invalid number exception';

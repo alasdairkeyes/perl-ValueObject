@@ -56,13 +56,13 @@ ok($direct_ipv6 eq $valid_ipv6_address, "stringify for object '$valid_ipv6_addre
 ## Test Exceptions
 
 throws_ok { ValueObject::Inet::IP::IPv4->new('sdfa') }
-	'ValueObject::Inet::IP::Exception::Invalid',
-	'Invalid string exception for IPv4';
+    'ValueObject::Inet::IP::Exception::Invalid',
+    'Invalid string exception for IPv4';
 
 throws_ok { ValueObject::Inet::IP::IPv6->new('sdfa') }
-	'ValueObject::Inet::IP::Exception::Invalid',
-	'Invalid string exception for IPv6';
+    'ValueObject::Inet::IP::Exception::Invalid',
+    'Invalid string exception for IPv6';
 
 throws_ok { ValueObject::Inet::IP->new('sdfa') }
-	'ValueObject::Inet::IP::Exception::Invalid',
-	'Invalid string exception for IP';
+    'ValueObject::Inet::IP::Exception::Invalid',
+    'Invalid string exception for IP';

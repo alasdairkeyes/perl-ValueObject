@@ -33,5 +33,5 @@ ok($email eq 'a@a.com', "stringify for object 'a\@a.com'");
 # Test Exceptions
 
 throws_ok { ValueObject::Inet::EmailAddress->new('sdfa') }
-	'ValueObject::Inet::EmailAddress::Exception::Invalid',
-	'Invalid string exception';
+    'ValueObject::Inet::EmailAddress::Exception::Invalid',
+    'Invalid string exception';
