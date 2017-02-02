@@ -28,3 +28,55 @@ sub new {
 }
 
 1;
+
+=head1 NAME
+
+ValueObject::Boolean - Boolean Value Object
+
+=head1 SYNOPSIS
+
+  use base qw/ ValueObject::Boolean /;
+
+  my $vo = ValueObject::Boolean->new('yes');
+
+=head1 DESCRIPTION
+
+ValueObject::Boolean provides Value Object for validation of boolean
+values.
+
+Returns one of 
+ValueObject::Boolean::OnOff
+ValueObject::Boolean::TrueFalse
+ValueObject::Boolean::YesNo
+
+or Exception object ValueObject::Boolean::Exception::Invalid
+
+=head1 METHODS
+
+=over 4
+
+=item new($value = '')
+
+Creates a new object
+
+=item validate()
+
+Called during instantiation to validate $value
+
+=item value()
+
+Returns the raw value as passed in at instantiation
+
+=item boolean()
+
+Returns a boolean 0 or 1 for no/yes
+
+=back
+
+=head1 SEE ALSO
+
+L<ValueObject::Boolean::OnOff>,
+L<ValueObject::Boolean::TrueFalse>
+L<ValueObject::Boolean::YesNo>
+
+=cut

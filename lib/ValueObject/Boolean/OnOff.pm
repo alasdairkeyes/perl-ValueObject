@@ -30,3 +30,46 @@ sub boolean {
 }
 
 1;
+
+=head1 NAME
+
+ValueObject::Boolean::OnOff - Boolean Value Object for on/off values
+
+=head1 SYNOPSIS
+
+  use base qw/ ValueObject::Boolean::OnOff /;
+
+  my $vo = ValueObject::Boolean::OnOff->new('on');
+
+=head1 DESCRIPTION
+
+ValueObject::Boolean::OnOff provides Value Object for validation of boolean
+values 'on' and 'off' (Case insensitive)
+
+=head1 METHODS
+
+=over 4
+
+=item new($value = '')
+
+Creates a new object
+
+=item validate()
+
+Called during instantiation to validate $value
+
+=item value()
+
+Returns the raw value as passed in at instantiation
+
+=item boolean()
+
+Returns a boolean 0 or 1 for off/on
+
+=back
+
+=head1 SEE ALSO
+
+L<ValueObject::Boolean>
+
+=cut

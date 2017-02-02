@@ -32,3 +32,48 @@ sub boolean {
 }
 
 1;
+
+=head1 NAME
+
+ValueObject::Boolean::YesNo - Boolean Value Object for yes/no values
+
+=head1 SYNOPSIS
+
+  use base qw/ ValueObject::Boolean::YesNo /;
+
+  my $vo = ValueObject::Boolean::YesNo->new('yes');
+
+=head1 DESCRIPTION
+
+ValueObject::Boolean::YesNo provides Value Object for validation of boolean
+values 'yes' and 'no' (Case insensitive)
+
+Accepts values 'y', 'yes', 'n', 'no' lowercase and uppercase.
+
+=head1 METHODS
+
+=over 4
+
+=item new($value = '')
+
+Creates a new object
+
+=item validate()
+
+Called during instantiation to validate $value
+
+=item value()
+
+Returns the raw value as passed in at instantiation
+
+=item boolean()
+
+Returns a boolean 0 or 1 for no/yes
+
+=back
+
+=head1 SEE ALSO
+
+L<ValueObject::Boolean>
+
+=cut
