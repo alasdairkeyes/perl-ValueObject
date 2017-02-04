@@ -1,0 +1,11 @@
+#!/bin/sh
+
+failed_test () {
+	echo "Failed pre-commit tests"
+	exit 1;
+}
+
+for FILE in `find lib/ -type f -name *.pm`; do
+	perl -Ilib -c "$FILE" || failed_test
+done
+prove t/ || failed_test
