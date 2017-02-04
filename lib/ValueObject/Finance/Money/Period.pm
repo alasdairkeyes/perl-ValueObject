@@ -10,8 +10,13 @@ sub validate {
     my $self    = shift;
     my $value   = shift || '';
     croak (ValueObject::Finance::Money::Exception::InvalidPeriod->new($value))
-        unless ($value =~ /^\d+\.\d{2}$/);
+        unless ($value =~ /^\d+(\.\d{1,2})?$/);
     return 1;
+}
+
+sub full_value {
+	my $self = shift;
+	return sprintf('%.2f', $self->value());
 }
 
 1;

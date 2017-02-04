@@ -10,8 +10,19 @@ sub validate {
     my $self    = shift;
     my $value   = shift || '';
     croak (ValueObject::Finance::Money::Exception::InvalidComma->new($value))
-        unless ($value =~ /^\d+,\d{2}$/);
+        unless ($value =~ /^\d+(\,\d{1,2})?$/);
     return 1;
+}
+
+sub full_value {
+	my $self = shift;
+
+	my $adjusted_value = $self->value();
+	$adjusted_value =~ s/,/\./g;
+	$adjusted_value = sprintf('%.2f', $adjusted_value);
+	$adjusted_value =~ s/\./,/g;
+
+	return $adjusted_value;
 }
 
 1;
