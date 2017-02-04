@@ -178,3 +178,43 @@ sub validate {
 }
 
 1;
+
+=head1 NAME
+
+ValueObject::Finance::Currency::Code - Value Object for Currency Codes
+
+=head1 SYNOPSIS
+
+  use ValueObject::Finance::Currency::Code;
+
+  my $vo = ValueObject::Finance::Currency::Code->new('gbp');
+
+=head1 DESCRIPTION
+
+Provides Value Object for validation of ISO 4217 currency codes. Case insensitive.
+
+=head1 METHODS
+
+=over 4
+
+=item new($value = '')
+
+Creates a new object
+
+Throws ValueObject::Finance::Currency::Exception::InvalidCode if $value is invalid
+
+=item validate()
+
+Called during instantiation to validate $value
+
+=item value()
+
+Returns the raw value as passed in at instantiation
+
+=back
+
+=head1 SEE ALSO
+
+L<ValueObject::Base>
+
+=cut

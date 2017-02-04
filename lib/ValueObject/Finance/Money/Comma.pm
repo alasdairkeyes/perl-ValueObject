@@ -26,3 +26,43 @@ sub full_value {
 }
 
 1;
+
+=head1 NAME
+
+ValueObject::Finance::Money::Comma - Value Object for comma separated money amounts
+
+=head1 SYNOPSIS
+
+  use ValueObject::Finance::Money::Comma
+
+  my $vo = ValueObject::Finance::Money::Comma->new(45,23);
+
+=head1 DESCRIPTION
+
+Provides Value Object for validation of monetary amounts using commas.
+
+=head1 METHODS
+
+=over 4
+
+=item new($value = '')
+
+Creates a new object
+
+Throws ValueObject::Finance::Money::Exception::InvalidComma if $value is invalid
+
+=item validate()
+
+Called during instantiation to validate $value
+
+=item value()
+
+Returns the raw value as passed in at instantiation
+
+=back
+
+=head1 SEE ALSO
+
+L<ValueObject::Finance::Money::Base>
+
+=cut
