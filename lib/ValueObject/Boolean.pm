@@ -35,7 +35,7 @@ ValueObject::Boolean - Boolean Value Object
 
 =head1 SYNOPSIS
 
-  use base ValueObject::Boolean;
+  use ValueObject::Boolean;
 
   my $vo = ValueObject::Boolean->new('yes');
 

@@ -34,7 +34,7 @@ ValueObject::Finance::Money - Value object to represent money amounts
 
 =head1 SYNOPSIS
 
-  use base ValueObject::Finance::Money;
+  use ValueObject::Finance::Money;
 
   my $vo = ValueObject::Finance::Money->new(35.65);
 
