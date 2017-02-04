@@ -34,3 +34,56 @@ sub validate {
 }
 
 1;
+
+=head1 NAME
+
+ValueObject::Identity::UUID - Value Object for UUIDs
+
+=head1 SYNOPSIS
+
+  use ValueObject::Identity::UUID;
+
+  my $vo = ValueObject::Identity::UUID->new('yes');
+
+=head1 DESCRIPTION
+
+ValueObject::Identity::UUID provides Value Object for validation of UUID values.
+
+Returns one of 
+ValueObject::Identity::UUIDv1
+ValueObject::Identity::UUIDv2
+ValueObject::Identity::UUIDv3
+ValueObject::Identity::UUIDv4
+ValueObject::Identity::UUIDv5
+
+or Exception object ValueObject::Identity::UUID::Exception::Invalid
+
+=head1 METHODS
+
+=over 4
+
+=item new($value = '')
+
+Creates a new object
+
+Throws ValueObject::Identity::UUID::Exception::Invalid if $value is invalid
+
+=item validate()
+
+Called during instantiation to validate $value
+
+=item value()
+
+Returns the raw value as passed in at instantiation
+
+=back
+
+=head1 SEE ALSO
+
+L<ValueObject::Identity::UUIDv1>,
+L<ValueObject::Identity::UUIDv2>,
+L<ValueObject::Identity::UUIDv3>,
+L<ValueObject::Identity::UUIDv4>,
+L<ValueObject::Identity::UUIDv5>,
+
+=cut
