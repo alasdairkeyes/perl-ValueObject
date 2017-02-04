@@ -35,7 +35,7 @@ ValueObject::Boolean - Boolean Value Object
 
 =head1 SYNOPSIS
 
-  use base qw/ ValueObject::Boolean /;
+  use base ValueObject::Boolean;
 
   my $vo = ValueObject::Boolean->new('yes');
 
@@ -58,6 +58,8 @@ or Exception object ValueObject::Boolean::Exception::Invalid
 =item new($value = '')
 
 Creates a new object
+
+Throws ValueObject::Boolean::Exception::Invalid if $value is invalid
 
 =item validate()
 

@@ -37,7 +37,7 @@ ValueObject::Boolean::OnOff - Boolean Value Object for on/off values
 
 =head1 SYNOPSIS
 
-  use base qw/ ValueObject::Boolean::OnOff /;
+  use ValueObject::Boolean::OnOff;
 
   my $vo = ValueObject::Boolean::OnOff->new('on');
 
@@ -53,6 +53,8 @@ values 'on' and 'off' (Case insensitive)
 =item new($value = '')
 
 Creates a new object
+
+Throws ValueObject::Boolean::Exception::InvalidOnOff if $value is invalid
 
 =item validate()
 

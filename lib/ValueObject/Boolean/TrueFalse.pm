@@ -39,7 +39,7 @@ ValueObject::Boolean::TrueFalse - Boolean Value Object for true/false values
 
 =head1 SYNOPSIS
 
-  use base qw/ ValueObject::Boolean::TrueFalse /;
+  use ValueObject::Boolean::TrueFalse;
 
   my $vo = ValueObject::Boolean::TrueFalse->new('true');
 
@@ -57,6 +57,8 @@ Accepts values 't', 'true', 'f', 'false' lowercase and uppercase.
 =item new($value = '')
 
 Creates a new object
+
+Throws ValueObject::Boolean::Exception::InvalidTrueFalse if $value is invalid
 
 =item validate()
 

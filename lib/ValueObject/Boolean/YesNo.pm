@@ -39,7 +39,7 @@ ValueObject::Boolean::YesNo - Boolean Value Object for yes/no values
 
 =head1 SYNOPSIS
 
-  use base qw/ ValueObject::Boolean::YesNo /;
+  use ValueObject::Boolean::YesNo;
 
   my $vo = ValueObject::Boolean::YesNo->new('yes');
 
@@ -57,6 +57,8 @@ Accepts values 'y', 'yes', 'n', 'no' lowercase and uppercase.
 =item new($value = '')
 
 Creates a new object
+
+Throws ValueObject::Boolean::Exception::InvalidYesNo if $value is invalid
 
 =item validate()
 
