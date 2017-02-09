@@ -22,3 +22,43 @@ sub validate {
 }
 
 1;
+
+=head1 NAME
+
+ValueObject::Inet::Port - Value object to represent an IP port
+
+=head1 SYNOPSIS
+
+  use ValueObject::Inet::Port;
+
+  my $vo = ValueObject::Inet::Port->new(80);
+
+=head1 DESCRIPTION
+
+ValueObject::Inet::Port provides Value Object for validation a port number
+
+=head1 METHODS
+
+=over 4
+
+=item new($value = '')
+
+Creates a new object
+
+Throws ValueObject::Inet::Port::Exception::Invalid if $value is invalid
+
+=item validate()
+
+Called during instantiation to validate $value
+
+=item value()
+
+Returns the raw value as passed in at instantiation
+
+=back
+
+=head1 SEE ALSO
+
+L<ValueObject::Base>
+
+=cut

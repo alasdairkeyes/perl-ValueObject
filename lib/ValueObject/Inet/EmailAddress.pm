@@ -17,3 +17,44 @@ sub validate {
 }
 
 1;
+
+=head1 NAME
+
+ValueObject::Inet::EmailAddress - Value object to represent an email address
+
+=head1 SYNOPSIS
+
+  use ValueObject::Inet::EmailAddress;
+
+  my $vo = ValueObject::Inet::EmailAddress->new('email@example.com');
+
+=head1 DESCRIPTION
+
+ValueObject::Inet::EmailAddress provides Value Object for validation of an email
+address. This uses Email::Valid to perform validation
+
+=head1 METHODS
+
+=over 4
+
+=item new($value = '')
+
+Creates a new object
+
+Throws ValueObject::Inet::EmailAddress::Exception::Invalid if $value is invalid
+
+=item validate()
+
+Called during instantiation to validate $value
+
+=item value()
+
+Returns the raw value as passed in at instantiation
+
+=back
+
+=head1 SEE ALSO
+
+L<ValueObject::Base>, L<Email::Valid>
+
+=cut
