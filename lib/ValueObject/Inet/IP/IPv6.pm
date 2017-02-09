@@ -4,14 +4,14 @@ use strict;
 use warnings;
 use Carp;
 use Net::IP;
-use ValueObject::Inet::IP::Exception::Invalid;
+use ValueObject::Inet::IP::Exception::InvalidIPv6;
 use base qw/ ValueObject::Inet::IP::Base /;
 
 sub validate {
     my $self    = shift;
     my $value   = shift || '';
     my $ip = Net::IP->new($value);
-    croak (ValueObject::Inet::IP::Exception::Invalid->new($value))
+    croak (ValueObject::Inet::IP::Exception::InvalidIPv6->new($value))
         unless (
             $ip &&
             $ip->size == 1 &&
