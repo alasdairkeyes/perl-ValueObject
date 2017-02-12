@@ -25,6 +25,7 @@ my $valid_postcodes = [
     'AB11 5BA',
     'E1W 1AD',
     'EC1A 1AL',
+	'b1 1bg'
 ];
 
 my $invalid_postcodes = [
