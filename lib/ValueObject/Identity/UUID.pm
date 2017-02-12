@@ -16,12 +16,12 @@ sub validate {
     my $value   = shift || '';
 
     foreach my $uuid_type (
-		'ValueObject::Identity::UUIDv1',
-		'ValueObject::Identity::UUIDv2',
-		'ValueObject::Identity::UUIDv3',
-		'ValueObject::Identity::UUIDv4',
-		'ValueObject::Identity::UUIDv5'
-	) {
+        'ValueObject::Identity::UUIDv1',
+        'ValueObject::Identity::UUIDv2',
+        'ValueObject::Identity::UUIDv3',
+        'ValueObject::Identity::UUIDv4',
+        'ValueObject::Identity::UUIDv5'
+    ) {
         my $uuid_object = eval {
             $uuid_type->new($value);
         };

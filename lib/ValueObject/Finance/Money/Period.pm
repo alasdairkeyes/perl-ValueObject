@@ -15,8 +15,8 @@ sub validate {
 }
 
 sub full_value {
-	my $self = shift;
-	return sprintf('%.2f', $self->value());
+    my $self = shift;
+    return sprintf('%.2f', $self->value());
 }
 
 1;
