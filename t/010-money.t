@@ -2,7 +2,7 @@
 
 use strict;
 use warnings;
-use Test::More tests => 27;
+use Test::More tests => 22;
 use Test::Exception;
 
 use FindBin qw($Bin);
@@ -15,18 +15,15 @@ use lib "$Bin/../lib";
 require_ok('ValueObject::Finance::Money::Comma');
 require_ok('ValueObject::Finance::Money::Period');
 require_ok('ValueObject::Finance::Money');
-require_ok('ValueObject::Finance::Currency::Code');
 
 
 my $valid_comma_money = '23,45';
 my $valid_period_money = '57.45';
-my $valid_currency_code = 'gbp';
 
 my $direct_comma = ValueObject::Finance::Money::Comma->new($valid_comma_money);
 my $direct_period = ValueObject::Finance::Money::Period->new($valid_period_money);
 my $factory_comma = ValueObject::Finance::Money->new($valid_comma_money);
 my $factory_period = ValueObject::Finance::Money->new($valid_period_money);
-my $currency_code = ValueObject::Finance::Currency::Code->new($valid_currency_code);
 
 
 # Instantiation Test
@@ -43,8 +40,6 @@ isa_ok($factory_comma, 'ValueObject::Finance::Money::Base');
 isa_ok($factory_period, 'ValueObject::Finance::Money::Period');
 isa_ok($factory_period, 'ValueObject::Finance::Money::Base');
 
-isa_ok($currency_code, 'ValueObject::Finance::Currency::Code');
-
 
 
 ## Test return values
@@ -55,9 +50,6 @@ ok($direct_comma eq $valid_comma_money, "stringify for object '$valid_comma_mone
 ok($direct_period->value() eq $valid_period_money, "value function for object '$valid_period_money'");
 ok($direct_period eq $valid_period_money, "stringify for object '$valid_period_money'");
 
-ok($currency_code->value() eq $valid_currency_code, "value function for object '$valid_currency_code'");
-ok($currency_code eq $valid_currency_code, "value function for object '$valid_currency_code'");
-
 
 ## Test difference valid formats
 
@@ -66,7 +58,7 @@ my $valid_pound_full_value = '23.00';
 my $valid_pound_object = ValueObject::Finance::Money::Period->new($valid_pound_amount);
 ok(	$valid_pound_object->full_value() eq $valid_pound_full_value,
 	"Full value '$valid_pound_full_value' returned for value '$valid_pound_amount'"
-); 
+);
 
 my $valid_pound_single_pence_amount = '45.6';
 my $valid_pound_single_pence_full_value = '45.60';
@@ -81,7 +73,7 @@ my $valid_euro_full_value = '23,00';
 my $valid_euro_object = ValueObject::Finance::Money::Comma->new($valid_euro_amount);
 ok(	$valid_euro_object->full_value() eq $valid_euro_full_value,
 	"Full value '$valid_euro_full_value' returned for value '$valid_euro_amount'"
-); 
+);
 
 my $valid_euro_single_cent_amount = '45,6';
 my $valid_euro_single_cent_full_value = '45,60';
@@ -103,8 +95,3 @@ throws_ok { ValueObject::Finance::Money::Comma->new('sdfa') }
 throws_ok { ValueObject::Finance::Money->new('sdfa') }
     'ValueObject::Finance::Money::Exception::Invalid',
     'Invalid string exception for Finance::Money';
-
-throws_ok { ValueObject::Finance::Currency::Code->new('sdfa') }
-    'ValueObject::Finance::Currency::Exception::InvalidCode',
-    'Invalid string exception for Finance::Currency::Code';
-
