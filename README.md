@@ -34,6 +34,11 @@ my $invalid_post_code = eval{
 * ValueObject::Finance::Money
 * ValueObject::Finance::Money::Comma
 * ValueObject::Finance::Money::Period
+* ValueObject::Finance::BIC
+* ValueObject::Finance::BIC::Generic
+* ValueObject::Finance::BIC::Passive
+* ValueObject::Finance::BIC::Reverse
+* ValueObject::Finance::BIC::Test
 * ValueObject::Gender
 * ValueObject::Identity::UUID
 * ValueObject::Identity::UUIDv1
