@@ -40,6 +40,8 @@ my $invalid_post_code = eval{
 * ValueObject::Finance::BIC::Reverse
 * ValueObject::Finance::BIC::Test
 * ValueObject::Gender
+* ValueObject::Geography::Country::Codes::2Character
+* ValueObject::Geography::Country::Codes::3Character
 * ValueObject::Identity::UUID
 * ValueObject::Identity::UUIDv1
 * ValueObject::Identity::UUIDv2
