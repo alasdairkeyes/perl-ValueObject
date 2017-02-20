@@ -76,6 +76,7 @@ https://github.com/alasdairkeyes/perl-ValueObject
 
 ## Changelog
 
+- 2017-02-20 :: 0.2.0       :: Added BIC, IBAN, Continent, Domain, Hostname, Country Code objects
 - 2017-02-12 :: 0.1.0       :: First release
 
 ## Author
