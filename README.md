@@ -41,6 +41,7 @@ my $invalid_post_code = eval{
 * ValueObject::Finance::BIC::Test
 * ValueObject::Finance::IBAN
 * ValueObject::Gender
+* ValueObject::Geography::Continent
 * ValueObject::Geography::Country::Codes::2Character
 * ValueObject::Geography::Country::Codes::3Character
 * ValueObject::Identity::UUID
@@ -49,7 +50,9 @@ my $invalid_post_code = eval{
 * ValueObject::Identity::UUIDv3
 * ValueObject::Identity::UUIDv4
 * ValueObject::Identity::UUIDv5
+* ValueObject::Inet::Domain
 * ValueObject::Inet::EmailAddress
+* ValueObject::Inet::Hostname
 * ValueObject::Inet::Port
 * ValueObject::Inet::MacAddress
 * ValueObject::Inet::IP
@@ -69,6 +72,7 @@ https://github.com/alasdairkeyes/perl-ValueObject
 
 - Email::Valid
 - Net::IP
+- Data::Validate::Domain
 
 ## Changelog
 
